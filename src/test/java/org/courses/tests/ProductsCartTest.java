@@ -15,7 +15,7 @@ import org.testng.annotations.Test;
 
 import java.util.stream.Collectors;
 
-public class ProductsCartTest {
+public class ProductsCartTest extends BaseTest {
 
     private WebDriver myPersonalDriver;
     private String userEmail;
@@ -24,9 +24,9 @@ public class ProductsCartTest {
 
     @BeforeClass
     public void beforeClass() {
-        userPassword = BaseTest.getUserPassword();
-        userEmail = BaseTest.getUserEmail();
-        myPersonalDriver = BaseTest.getMyPersonalDriver();
+        userPassword = getUserPassword();
+        userEmail = getUserEmail();
+        myPersonalDriver = getMyPersonalDriver();
         mainPage = new MainPage(myPersonalDriver);
         mainPage.open();
         mainPage.login(userEmail, userPassword);
