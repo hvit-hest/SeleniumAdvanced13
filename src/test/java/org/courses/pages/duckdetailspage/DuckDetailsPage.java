@@ -13,6 +13,9 @@ public class DuckDetailsPage {
     @FindBy(css = "h1.title")
     private WebElement pageHeader;
 
+    private By cartQuantityBy = By.cssSelector("#cart .quantity");
+    private String quantityTamplateXpath = "//*[@id='cart']//*[@class='quantity'][.='%s']";
+
 
     public DuckDetailsPage(WebDriver mePersonalDriver) {
         this.driverHere = mePersonalDriver;
@@ -28,6 +31,18 @@ public class DuckDetailsPage {
     }
 
     public DuckDetailsSection getDuckDetailsSection() {
-        return new DuckDetailsSection(driverHere.findElement(By.cssSelector("#box-product")));
+        return new DuckDetailsSection(driverHere);
+    }
+
+    public By getCartQuantityBy() {
+        return cartQuantityBy;
+    }
+
+    public String getQuantityTamplateXpath() {
+        return quantityTamplateXpath;
+    }
+
+    public WebElement getCartCounter() {
+        return driverHere.findElement(cartQuantityBy);
     }
 }

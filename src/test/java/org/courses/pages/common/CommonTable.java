@@ -90,6 +90,9 @@ public class CommonTable {
 
     public WebElement getCellByTextFromColumn(int column, String textInCell) {
         return getRowCells(getRowByText(textInCell)).get(column);
+    }
 
+    public WebElement getLastRow() {
+        return getRows().get(getRows().size()-1);
     }
 }

@@ -31,6 +31,9 @@ public class MainPage {
     @FindBy(xpath = "//a[contains(., 'New customer')]")
     private WebElement newCustomerLink;
 
+    @FindBy(xpath = "//*[@id='cart']//a[contains(.,'Checkout')]")
+    private WebElement checkOutButton;
+
 
     public MainPage(WebDriver myPersonalDriver) {
         this.driverHere = myPersonalDriver;
@@ -93,5 +96,9 @@ public class MainPage {
 
     public void clickNewCustomerLink() {
         newCustomerLink.click();
+    }
+
+    public void clickCheckOutLink() {
+        checkOutButton.click();
     }
 }

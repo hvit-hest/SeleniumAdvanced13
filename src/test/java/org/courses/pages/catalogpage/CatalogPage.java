@@ -18,19 +18,6 @@ public class CatalogPage {
     @FindBy(xpath = "//a[@class='button'][contains(.,'Add New Product')]")
     private WebElement addNewProductButton;
 
-    /*@FindBy(css = "#rslides1_s0")
-    private WebElement bigDuckPicture;
-
-    @FindBy(css = "ul.products>li.product")
-    private List<WebElement> duckProducts;
-
-    @FindBy(xpath = "//aside//li/a[.='Logout']")
-    private WebElement logoutButton;
-
-    @FindBy(xpath = "//a[contains(., 'New customer')]")
-    private WebElement newCustomerLink;*/
-
-
     public CatalogPage(WebDriver myPersonalDriver) {
         this.driverHere = myPersonalDriver;
         PageFactory.initElements(driverHere, this);
